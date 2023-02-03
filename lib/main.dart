@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttermon/src/consts_routes.dart';
-import 'package:fluttermon/src/splash/splash_screen.dart';
-import 'package:fluttermon/src/starters/starters_screen.dart';
+import 'package:fluttermon/src/shared/utils/consts_routes.dart';
+import 'package:fluttermon/src/modules/splash/splash_screen.dart';
+import 'package:fluttermon/src/modules/starters/starters_screen.dart';
 
 void main() {
   runApp(const MyApp());

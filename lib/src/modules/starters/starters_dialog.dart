@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:fluttermon/src/starters/starters_controller.dart';
+import 'package:fluttermon/src/modules/starters/starters_controller.dart';
 
 class StartersDialog extends StatelessWidget {
 

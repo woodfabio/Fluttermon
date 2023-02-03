@@ -2,8 +2,8 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
-import 'package:fluttermon/src/models/elemtype.dart';
-import 'package:fluttermon/src/models/move.dart';
+import 'package:fluttermon/src/shared/models/elemtype.dart';
+import 'package:fluttermon/src/shared/models/move.dart';
 
 class Pokemon {
     // attributes

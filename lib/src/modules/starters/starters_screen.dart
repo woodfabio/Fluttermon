@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:fluttermon/src/starters/starters_controller.dart';
-import 'package:fluttermon/src/starters/starters_dialog.dart';
+import 'package:fluttermon/src/modules/starters/starters_controller.dart';
+import 'package:fluttermon/src/modules/starters/starters_dialog.dart';
 
 class StartersScreen extends StatefulWidget {
   const StartersScreen({super.key});

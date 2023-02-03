@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:fluttermon/src/models/elemtype.dart';
-import 'package:fluttermon/src/models/pokemon.dart';
+import 'package:fluttermon/src/shared/models/elemtype.dart';
+import 'package:fluttermon/src/shared/models/pokemon.dart';
 
 class Move {
   String name;

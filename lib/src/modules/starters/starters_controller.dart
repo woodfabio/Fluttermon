@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:fluttermon/src/models/pokemon.dart';
-import 'package:fluttermon/src/sharedpreferences_keys.dart';
-import 'package:fluttermon/src/starters/starters_state.dart';
+import 'package:fluttermon/src/shared/models/pokemon.dart';
+import 'package:fluttermon/src/shared/sharedpreferences_keys.dart';
+import 'package:fluttermon/src/modules/starters/starters_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StartersController extends ChangeNotifier {

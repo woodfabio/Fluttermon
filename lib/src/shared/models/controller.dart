@@ -1,5 +1,5 @@
 
-import 'package:fluttermon/src/models/pokemon.dart';
+import 'package:fluttermon/src/shared/models/pokemon.dart';
 
 class Controller {
 
