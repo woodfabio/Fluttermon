@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttermon/controller_classes.dart/controller.dart';
+import 'package:fluttermon/src/consts_routes.dart';
 import 'package:fluttermon/src/splash/splash_screen.dart';
 import 'package:fluttermon/src/starters/starters_screen.dart';
 
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
-        '/starters': (context) => const StartersScreen(),
+        ConstsRoutes.rootRoute: (context) => const SplashScreen(),
+        ConstsRoutes.startersRoute: (context) => const StartersScreen(),
         // '/map': (context) => MapScreen(),
       },
     );
