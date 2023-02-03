@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-import 'package:fluttermon/controller_classes.dart/elemtype.dart';
+import 'package:fluttermon/src/models/elemtype.dart';
 
 class EvStats {
 

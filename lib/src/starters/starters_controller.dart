@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:fluttermon/controller_classes.dart/pokemon.dart';
+import 'package:fluttermon/src/models/pokemon.dart';
 import 'package:fluttermon/src/sharedpreferences_keys.dart';
 import 'package:fluttermon/src/starters/starters_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
