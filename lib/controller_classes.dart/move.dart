@@ -1,7 +1,4 @@
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
-
 import 'package:fluttermon/controller_classes.dart/elemtype.dart';
 import 'package:fluttermon/controller_classes.dart/pokemon.dart';
 

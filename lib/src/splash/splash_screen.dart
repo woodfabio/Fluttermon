@@ -1,11 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttermon/src/Splash/splash_controller.dart';
 import 'package:fluttermon/src/Splash/splash_state.dart';
-import 'package:fluttermon/src/starters/starters_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -1,11 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:fluttermon/controller_classes.dart/pokemon.dart';
 import 'package:fluttermon/src/starters/starters_controller.dart';
 import 'package:fluttermon/src/starters/starters_dialog.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class StartersScreen extends StatefulWidget {
   const StartersScreen({super.key});

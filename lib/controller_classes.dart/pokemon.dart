@@ -1,18 +1,15 @@
 
 import 'dart:convert';
 import 'dart:math';
-
 import 'package:flutter/foundation.dart';
-
 import 'package:fluttermon/controller_classes.dart/elemtype.dart';
-import 'package:fluttermon/controller_classes.dart/evstats.dart';
 import 'package:fluttermon/controller_classes.dart/move.dart';
 
 class Pokemon {
     // attributes
     String? frontImgSrc;     // front image
     String? backImgSrc;      // back image
-    int spsnum;                  // species number
+    int spsnum;              // species number
     String? species;         // pokémon species    
     String? name;            // pokémon name
     ElemType? elemType1;     // pokémon type 1
@@ -40,10 +37,10 @@ class Pokemon {
     List<int>? ev1stats;
     List<ElemType>? ev2elemtypes;
     List<int>? ev2stats;
-    List<int>? lvlup;     // levels for learning new moves
+    List<int>? lvlup;          // levels for learning new moves
     List<Move?>? lvlupmoves;   // new moves for learn when level up
     
-    // species constructor methods
+  // species constructor methods
   Pokemon({
     this.frontImgSrc,
     this.backImgSrc,

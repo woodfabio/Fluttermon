@@ -1,9 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttermon/src/starters/starters_controller.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class StartersDialog extends StatelessWidget {
 
