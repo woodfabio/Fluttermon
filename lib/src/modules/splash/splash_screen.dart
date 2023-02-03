@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermon/src/Splash/splash_controller.dart';
 import 'package:fluttermon/src/Splash/splash_state.dart';
+import 'package:fluttermon/src/shared/utils/consts.dart';
+import 'package:fluttermon/src/shared/utils/consts_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
           if (value.runtimeType == SplashStateAuthenticated) {
             // TODO: go to map
           } else if (value.runtimeType == SplashStateUnauthenticated) {
-            Navigator.pushReplacementNamed(context, '/starters');
+            Navigator.pushReplacementNamed(context, ConstsRoutes.startersRoute);
 
           }
         }
@@ -36,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Fluttermon'),
+        child: Text(Consts.fluttermonName),
       )
     );
   }
