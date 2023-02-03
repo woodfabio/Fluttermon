@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:fluttermon/src/shared/models/pokemon.dart';
-import 'package:fluttermon/src/shared/sharedpreferences_keys.dart';
+import 'package:fluttermon/src/shared/utils/consts.dart';
+import 'package:fluttermon/src/shared/utils/sharedpreferences_keys.dart';
 import 'package:fluttermon/src/modules/starters/starters_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,10 +14,10 @@ class StartersController extends ChangeNotifier {
 
   late ValueNotifier<Pokemon?> playerPoke$;
 
-  String bulbasaurImg = 'images/pokemons/bulbasaur_line/bulbapedia/bulbasaur.png';
-  String charmanderImg = 'images/pokemons/charmander_line/bulbapedia/charmander.webp';
-  String squirtleImg = 'images/pokemons/squirtle_line/bulbapedia/squirtle.webp';
-  String nullImg = '';
+  String bulbasaurImg = Consts.bulbasaurFrontImg;
+  String charmanderImg = Consts.charmanderFrontImg;
+  String squirtleImg = Consts.squirtleFrontImg;
+  String nullImg = Consts.nullImg;
 
   Future<void> setPokemon ({
     required String choosenPokeNum,

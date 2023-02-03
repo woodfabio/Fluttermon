@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:fluttermon/src/shared/models/elemtype.dart';
 import 'package:fluttermon/src/shared/models/move.dart';
+import 'package:fluttermon/src/shared/utils/consts.dart';
 
 class Pokemon {
     // attributes
@@ -70,9 +71,9 @@ class Pokemon {
         if (spsnum == 1) {
           // bulbasaur constructor
             level = 1;
-            frontImgSrc = 'images/pokemons/bulbasaur_line/bulbapedia/bulbasaur.png';
-            backImgSrc = 'images/pokemons/bulbasaur_line/bulbapedia/bulbasaur_back.png';
-            setSpecies("Bulbasaur");
+            frontImgSrc = Consts.bulbasaurFrontImg;
+            backImgSrc = Consts.bulbasaurBackImg;
+            setSpecies(Consts.bulbasaurSpecies);
             // type 1
             setType1(ElemType(id:1));
             // type 2
@@ -92,7 +93,7 @@ class Pokemon {
             // evolution levels
             ev = [16, 32];
             // evolutions stats
-            evnames = ["Ivysaur","Venusaur"];
+            evnames = [Consts.ivysaurSpecies, Consts.venusaurSpecies];
             ev1elemtypes = [ElemType(id:1), ElemType(id:5)];
             ev1stats = [60, 62, 63, 60];
             ev2elemtypes = [ElemType(id:1), ElemType(id:5)];
