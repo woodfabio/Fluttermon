@@ -4,6 +4,13 @@ class Consts {
   // splash texts
   static const String fluttermonName = 'Fluttermon';
 
+  // Login texts -------------------------------------------------------------------------------------------------
+
+  static const String imageLoginPage = 'images/login_flow/oak.png';
+  static const String textSalutation = 'Olá! Bem-vindo ao Fluttermon!';
+  static const String textInteraction = 'Por favor, digite seu nome:';
+  static const String textUsername = 'Nome';
+
   // POKEMON NAMES -----------------------------------------------------------------------------------------------
   
   // bulbasaur line
