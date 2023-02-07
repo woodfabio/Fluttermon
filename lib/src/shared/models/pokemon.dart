@@ -31,7 +31,7 @@ class Pokemon {
     int? def;       // defense
     int? spe;       // speed
     bool? npc;      // true if the pokémon is an NPC
-    List<Move?>? moves;    // pokémon moves
+    List<Move?>? moves;   // pokémon moves
     List<int>? ev;        // levels required for evolution/
     List<String>? evnames;
     List<ElemType>? ev1elemtypes;
