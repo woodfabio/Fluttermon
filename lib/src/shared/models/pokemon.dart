@@ -8,6 +8,7 @@ import 'package:fluttermon/src/shared/utils/consts.dart';
 
 class Pokemon {
     // attributes
+    String owner;            // owner user name
     String? frontImgSrc;     // front image
     String? backImgSrc;      // back image
     int spsnum;              // species number
@@ -43,6 +44,7 @@ class Pokemon {
     
   // species constructor methods
   Pokemon({
+    required this.owner,
     this.frontImgSrc,
     this.backImgSrc,
     required this.spsnum,
@@ -402,6 +404,7 @@ class Pokemon {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'owner' : owner,
       'frontImgSrc': frontImgSrc,
       'backImgSrc': backImgSrc,
       'spsnum': spsnum,
@@ -431,6 +434,7 @@ class Pokemon {
 
   factory Pokemon.fromMap(Map<String, dynamic> map) {
     return Pokemon(
+      owner: map['owner'] as String,
       frontImgSrc: map['frontImgSrc'] != null ? map['frontImgSrc'] as String : null,
       backImgSrc: map['backImgSrc'] != null ? map['backImgSrc'] as String : null,
       spsnum: map['spsnum'] as int,
@@ -464,7 +468,7 @@ class Pokemon {
 
   @override
   String toString() {
-    return 'Pokemon(frontImgSrc: $frontImgSrc, backImgSrc: $backImgSrc, spsnum: $spsnum, species: $species, name: $name, elemType1: $elemType1, elemType2: $elemType2, level: $level, hp: $hp, curhp: $curhp, fainted: $fainted, atk: $atk, def: $def, spe: $spe, npc: $npc, moves: $moves, ev: $ev, evnames: $evnames, ev1elemtypes: $ev1elemtypes, ev1stats: $ev1stats, ev2elemtypes: $ev2elemtypes, ev2stats: $ev2stats, lvlup: $lvlup, lvlupmoves: $lvlupmoves)';
+    return 'Pokemon(owner: $owner, frontImgSrc: $frontImgSrc, backImgSrc: $backImgSrc, spsnum: $spsnum, species: $species, name: $name, elemType1: $elemType1, elemType2: $elemType2, level: $level, hp: $hp, curhp: $curhp, fainted: $fainted, atk: $atk, def: $def, spe: $spe, npc: $npc, moves: $moves, ev: $ev, evnames: $evnames, ev1elemtypes: $ev1elemtypes, ev1stats: $ev1stats, ev2elemtypes: $ev2elemtypes, ev2stats: $ev2stats, lvlup: $lvlup, lvlupmoves: $lvlupmoves)';
   }
 
   @override
@@ -472,6 +476,7 @@ class Pokemon {
     if (identical(this, other)) return true;
   
     return 
+      other.owner == owner &&
       other.frontImgSrc == frontImgSrc &&
       other.backImgSrc == backImgSrc &&
       other.spsnum == spsnum &&
@@ -500,7 +505,8 @@ class Pokemon {
 
   @override
   int get hashCode {
-    return frontImgSrc.hashCode ^
+    return owner.hashCode ^
+      frontImgSrc.hashCode ^
       backImgSrc.hashCode ^
       spsnum.hashCode ^
       species.hashCode ^
