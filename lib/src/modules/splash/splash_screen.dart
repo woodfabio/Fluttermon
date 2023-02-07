@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:fluttermon/src/Splash/splash_controller.dart';
-import 'package:fluttermon/src/Splash/splash_state.dart';
+import 'package:fluttermon/src/modules/splash/splash_controller.dart';
+import 'package:fluttermon/src/modules/splash/splash_state.dart';
 import 'package:fluttermon/src/shared/utils/consts.dart';
 import 'package:fluttermon/src/shared/utils/consts_routes.dart';
 
@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       (value) async {
         controller.isAuthenticated().then((value) {
           if (value.runtimeType == SplashStateAuthenticated) {
-            // TODO: go to map
+            // TODO: go to road map
           } else if (value.runtimeType == SplashStateUnauthenticated) {
             Navigator.pushReplacementNamed(context, ConstsRoutes.startersRoute);
 

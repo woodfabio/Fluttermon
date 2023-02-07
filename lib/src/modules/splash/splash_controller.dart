@@ -1,5 +1,5 @@
 
-import 'package:fluttermon/src/Splash/splash_state.dart';
+import 'package:fluttermon/src/modules/splash/splash_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashController {
