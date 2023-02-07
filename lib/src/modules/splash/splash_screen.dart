@@ -24,8 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
           if (value.runtimeType == SplashStateAuthenticated) {
             // TODO: go to road map
           } else if (value.runtimeType == SplashStateUnauthenticated) {
-            Navigator.pushReplacementNamed(context, ConstsRoutes.startersRoute);
-
+            Navigator.pushReplacementNamed(context, ConstsRoutes.signUpRoute);
           }
         }
         );
