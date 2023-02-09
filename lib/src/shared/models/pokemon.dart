@@ -8,7 +8,7 @@ import 'package:fluttermon/src/shared/utils/consts.dart';
 
 class Pokemon {
     // attributes
-    String owner;            // owner user name
+    String? owner;            // owner user name
     String? frontImgSrc;     // front image
     String? backImgSrc;      // back image
     int spsnum;              // species number
@@ -44,7 +44,7 @@ class Pokemon {
     
   // species constructor methods
   Pokemon({
-    required this.owner,
+    this.owner,
     this.frontImgSrc,
     this.backImgSrc,
     required this.spsnum,
@@ -108,23 +108,24 @@ class Pokemon {
                           Move(name:"Take Down", elemType:ElemType(id:0), power:90, pp:10),
                           Move(name:"Double Edge", elemType:ElemType(id:0), power:120, pp:15),
                           Move(name:"Solar Beam", elemType:ElemType(id:1), power:120, pp:10)];
-        } /* else if (spsnum == 2) {
-            // charmander constructor
-            frontImgSrc = 'images/pokemons/charmander_line/bulbapedia/charmander.webp';
-            backImgSrc = 'images/pokemons/charmander_line/bulbapedia/charmander_back.webp';
+        } else if (spsnum == 2) {
+          // charmander constructor
+            frontImgSrc = Consts.charmanderFrontImg;
+            backImgSrc = Consts.charmanderBackImg;
             level = 1;
-            setSpecies("Charmander");
+            setSpecies(Consts.charmanderSpecies);
             // type 1
             setType1(ElemType(id:2));
             // type 2
             setType2(ElemType(id:-1));
             // status
             setHp(39);
-            setCurhp(getHp()!);
+            setCurhp(39);
             setAtk(60);
             setDef(50);
             setSpe(65);
             // moves
+            moves = List.generate(4, (index) => null);
             setMove(0, Move(name:"Scratch", elemType:ElemType(id:0), power:40, pp:35));
             setMove(1, Move(name:"Ember", elemType:ElemType(id:2), power:40, pp:25));
             setMove(2, Move(elemType:ElemType(id:-1)));
@@ -132,14 +133,11 @@ class Pokemon {
             // evolution levels
             ev = [16, 36];
             // evolutions stats
-            evstats = EvStats(
-              ev1stats: [58, 64, 65, 80], 
-              ev2stats: [78, 109, 85, 100]);
-            // evolution names
-            evnames = ["Charmeleon", "Charizard"];
-            // evolution types
-            evelemtypes![0] = [ElemType(id:2), ElemType(id:-1)];
-            evelemtypes![1] = [ElemType(id:2), ElemType(id:6)];
+            evnames = [Consts.charmeleonSpecies, Consts.charizardSpecies];
+            ev1elemtypes = [ElemType(id:2), ElemType(id:-1)];
+            ev1stats = [58, 64, 65, 80];
+            ev2elemtypes = [ElemType(id:2), ElemType(id:6)];
+            ev2stats = [78, 109, 85, 100];
             // levels to learn new moves
             lvlup = [12, 17, 20, 24, 40];
             // Moves to be learned when level up
@@ -150,21 +148,22 @@ class Pokemon {
                           Move(name:"Flare Blitz", elemType:ElemType(id:2), power:120, pp:15)];
         } else if (spsnum == 3) {
             // squirtle constructor
-            frontImgSrc = 'images/pokemons/squirtle_line/bulbapedia/squirtle.webp';
-            backImgSrc = 'images/pokemons/squirtle_line/bulbapedia/squirtle_back.webp';
+            frontImgSrc = Consts.squirtleFrontImg;
+            backImgSrc = Consts.squirtleBackImg;
             level = 1;
-            setSpecies("Squirtle");
+            setSpecies(Consts.squirtleSpecies);
             // type 1
             setType1(ElemType(id:3));
             // type 2
             setType2(ElemType(id:-1));
             // status
             setHp(44);
-            setCurhp(getHp()!);
+            setCurhp(44);
             setAtk(50);
             setDef(65);
             setSpe(43);
             // moves
+            moves = List.generate(4, (index) => null);
             setMove(0, Move(name:"Tackle", elemType:ElemType(id:0), power:40, pp:35));
             setMove(1, Move(name:"Water Gun", elemType:ElemType(id:3), power:40, pp:25));
             setMove(2, Move(elemType:ElemType(id:-1)));
@@ -172,14 +171,11 @@ class Pokemon {
             // evolution levels
             ev = [16, 36];
             // evolutions stats
-            evstats = EvStats(
-              ev1stats: [59, 65, 80, 58], 
-              ev2stats: [79, 135, 120, 78]);
-            // evolution names
-            evnames = ["Wartortle", "Blastoise"];
-            // evolution types            
-            evelemtypes![0] = [ElemType(id:3), ElemType(id:-1)];
-            evelemtypes![1] = [ElemType(id:3), ElemType(id:-1)];
+            evnames = [Consts.wartortleSpecies, Consts.blastoiseSpecies];
+            ev1elemtypes = [ElemType(id:3), ElemType(id:-1)];
+            ev1stats = [59, 65, 80, 58];
+            ev2elemtypes = [ElemType(id:3), ElemType(id:-1)];
+            ev2stats = [79, 135, 120, 78];
             // levels to learn new moves
             lvlup = [9, 15, 24, 33, 36];
             // Moves to be learned when level up
@@ -187,7 +183,7 @@ class Pokemon {
                         Move(name:"Aqua Tail", elemType:ElemType(id:3), power:90, pp:10),
                         Move(name:"Hydro Pump", elemType:ElemType(id:3), power:110, pp:5),
                         Move(name:"Skull Bash", elemType:ElemType(id:0), power:130, pp:10)];
-        } */
+        }
     }
     // getter and setter methods - not all attributes have public setter methods
     String getSpecies() {
