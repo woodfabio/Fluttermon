@@ -7,9 +7,16 @@ class Consts {
   // Login texts -------------------------------------------------------------------------------------------------
 
   static const String imageLoginPage = 'images/login_flow/oak.png';
-  static const String textSalutation = 'Olá! Bem-vindo ao Fluttermon!';
-  static const String textInteraction = 'Por favor, digite seu nome:';
-  static const String textUsername = 'Nome';
+  static const String textSalutation = 'Hello! Welcome to Fluttermon!';
+  static const String textInteraction = 'Please enter your name:';
+  static const String textUsername = 'Name';
+  static const String signUpButton = 'Sign Up';
+
+  // starters screen texts ---------------------------------------------------------------------------------------
+
+  static const String startersScreenText1 = 'Hello, ';
+  static const String startersScreenText2 = ', choose a pokémon:';
+
 
   // POKEMON NAMES -----------------------------------------------------------------------------------------------
   
@@ -28,17 +35,26 @@ class Consts {
   static const String wartortleSpecies = 'Wartortle';
   static const String blastoiseSpecies = 'Blastoise';
 
-  // IMAGES ----------------------------------------------------------------------------------------------------
+  // POKEMON IMAGES -----------------------------------------------------------------------------------------------
 
   // starters images
-  // front images
+  // bulbasaur
   static const String bulbasaurFrontImg = 'images/pokemons/bulbasaur_line/bulbapedia/bulbasaur.png';
+  static const String bulbasaurBackImg = 'images/pokemons/bulbasaur_line/bulbapedia/bulbasaur_back.png';
+
+  // charmander
   static const String charmanderFrontImg = 'images/pokemons/charmander_line/bulbapedia/charmander.webp';
+  static const String charmanderBackImg = 'images/pokemons/charmander_line/bulbapedia/charmander_back.webp';
+
+  // squirtle
   static const String squirtleFrontImg = 'images/pokemons/squirtle_line/bulbapedia/squirtle.webp';
+  static const String squirtleBackImg = 'images/pokemons/squirtle_line/bulbapedia/squirtle_back.webp';
+
+  // null images  
   static const String nullImg = '';
 
-  // back images
-  static const String bulbasaurBackImg = 'images/pokemons/bulbasaur_line/bulbapedia/bulbasaur_back.png';
+  // pokeball
+  static const String pokeballImg = 'images/pokeball.png';
 
 
 }
