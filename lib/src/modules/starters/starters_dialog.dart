@@ -1,23 +1,22 @@
 
 import 'package:flutter/material.dart';
 import 'package:fluttermon/src/modules/starters/starters_controller.dart';
+import 'package:fluttermon/src/shared/models/pokemon.dart';
 
 class StartersDialog extends StatelessWidget {
 
   final controller = StartersController();
-  late String pokeSps;
-  late String pokeImgSrc;
+  final Pokemon pokemon;
 
   StartersDialog({
     super.key,
-    required this.pokeSps,
-    required this.pokeImgSrc,
+    required this.pokemon,
     });
 
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-      title: Text('You choosed $pokeSps, are you sure?'),
+      title: Text('You choosed ${pokemon.species!}, are you sure?'),
       shape: RoundedRectangleBorder(
 			  borderRadius: BorderRadius.circular(16.0),
 		  ),
@@ -30,7 +29,7 @@ class StartersDialog extends StatelessWidget {
                   width: 150,
                   decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(pokeImgSrc),
+                    image: AssetImage(pokemon.frontImgSrc!),
                     fit: BoxFit.cover,
                     ),
                   ),
@@ -40,17 +39,19 @@ class StartersDialog extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Text('Yes'),
-                  onPressed: () {
+                  onPressed: () async {
+                    await controller.setPokemon(choosenPokeNum: pokemon.spsnum.toString());
                     Navigator.pop(context);
                   }
                 ),
                 IconButton(
                   icon: const Text('No'),
                   onPressed: () async {
-                    await controller.setPokemon(choosenPokeNum: '',
-                    ).then((_) {
+                    await controller.setPokemon(choosenPokeNum: '')
+                    .then((_) {
                         Navigator.pop(context);
-                        });
+                      },
+                    );
                     },
                 )
               ],
