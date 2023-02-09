@@ -1,6 +1,6 @@
 class SharedPreferencesKeys { 
 
-  static const String user = 'user';
-  static const String playerPoke = 'playerPoke';
+  static const String users = 'users';
+  static const String playerPokes = 'playerPokes';
 
 }

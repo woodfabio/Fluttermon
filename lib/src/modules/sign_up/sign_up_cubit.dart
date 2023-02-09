@@ -11,17 +11,28 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   SignUpCubit(super.initialState) {log('SignUpCubit created');}
 
-  Future<void> addUser({required UserModel user}) async {
+  List<UserModel> myUsers = <UserModel>[];
 
-    emit(SignUpStateLoading());
-    
+  Future<void> getUsers() async {
     final prefs = await SharedPreferences.getInstance();
-    
-    final userJson = user.toJson();
-    prefs.setString(SharedPreferencesKeys.user, jsonEncode(userJson));
+    final users = prefs.getString(SharedPreferencesKeys.users);
+
+    if (users != null && users.isNotEmpty) {
+      final decoded = jsonDecode(users);
+      final decodedUsers = (decoded as List).map((e) => UserModel.fromJson(e)).toList();
+      myUsers = decodedUsers;
+    }
+  }
+
+  Future<void> addUser({required UserModel user}) async {
+    emit(SignUpStateLoading());
+
+    final prefs = await SharedPreferences.getInstance();    
+    myUsers.add(user);
+    final myUsersJson = myUsers.map((e) => e.toJson()).toList();
+    prefs.setString(SharedPreferencesKeys.users, jsonEncode(myUsersJson));
 
     emit(SignUpStateSuccess());
-
   }
   
 }
