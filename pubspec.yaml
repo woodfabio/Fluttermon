@@ -31,7 +31,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.0.17
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -70,6 +70,8 @@ flutter:
      - images/pokemons/charmander_line/bulbapedia/charmander_back.webp
      - images/pokemons/squirtle_line/bulbapedia/squirtle.webp
      - images/pokemons/squirtle_line/bulbapedia/squirtle_back.webp
+     - images/login_flow/oak.png
+     - images/pokeball.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
