@@ -22,7 +22,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
   //Controle com entrada de parametro "text" com valores para teste
   final formValidVN = ValueNotifier<bool>(false);
   final formkey = GlobalKey<FormState>();
-  final usernameController = TextEditingController(text: 'WOOD');
+  final usernameController = TextEditingController();
+
+  @override
+  void initState() {
+    signUpCubit.getUsers();
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -48,13 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           }
         },
         builder: (context, state) {
-          if (state is SignUpStateLoading) {
-
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-
-          } else if (state is SignUpStateEmpty) {
+          if (state is SignUpStateEmpty) {
             
             log(state.toString());
             return SafeArea(
@@ -80,10 +80,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Row(
+                                const Row(
                                   mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                      children: const [
+                                      children: [
                                         SizedBox(
                                           height: 200,
                                           width: 200,
@@ -100,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          Consts.textSalutation,
+                                          Consts.signUpTextSalutation,
                                           style: theme.textTheme.labelLarge,
                                         ),
                                         const SizedBox(height: 20),
@@ -112,6 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     ),
                                     const SizedBox(height: 20),
                                     TextFormField(
+                                      controller: usernameController,
                                       decoration: InputDecoration(
                                         label: Text(
                                           Consts.textUsername,
@@ -154,6 +155,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   await signUpCubit.addUser(user: user);
                                   formkey.currentState!.reset();
                                   inputClear;
+                                  if (!mounted) return;
                                   Navigator.popAndPushNamed(context, ConstsRoutes.startersRoute);
                                 }
                               },                              
@@ -166,6 +168,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ],
                 ),
               ),
+            );
+          
+          } else if (state is SignUpStateLoading) {
+
+            return const Center(
+              child: CircularProgressIndicator(),
             );
           
           } else if (state is SignUpStateError) {
