@@ -72,6 +72,8 @@ flutter:
      - images/pokemons/squirtle_line/bulbapedia/squirtle_back.webp
      - images/login_flow/oak.png
      - images/pokeball.png
+     - images/user.png
+     - images/fluttermon_logo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
