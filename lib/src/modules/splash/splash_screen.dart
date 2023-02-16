@@ -20,10 +20,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState () {
     Future.delayed(const Duration(seconds: 2)).then(
       (value) async {
-        controller.isAuthenticated().then((value) {
-          if (value.runtimeType == SplashStateAuthenticated) {
-            // TODO: go to road map
-          } else if (value.runtimeType == SplashStateUnauthenticated) {
+        controller.hasUsers().then((value) {
+          if (value.runtimeType == SplashStateHasUsers) {
+            Navigator.popAndPushNamed(context, ConstsRoutes.chooseUserRoute);
+          } else if (value.runtimeType == SplashStateNoUsers) {
             Navigator.pushReplacementNamed(context, ConstsRoutes.signUpRoute);
           }
         }
@@ -35,10 +35,27 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text(Consts.fluttermonName),
-      )
+        child: Container(
+          height: 200,
+          width: 350,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 10,
+              color: Colors.blue,
+              ),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+          ),
+          child: const SizedBox(
+          height: 200,
+          width: 3500,
+            child: Image(
+              image: AssetImage(Consts.fluttermonLogo),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

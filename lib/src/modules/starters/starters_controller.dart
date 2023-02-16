@@ -26,12 +26,12 @@ class StartersController extends ChangeNotifier {
   }) async {
     final prefs = await SharedPreferences.getInstance();
 
-    final user = prefs.getString(SharedPreferencesKeys.user);
+    final user = prefs.getString(SharedPreferencesKeys.currentUser);
 
     if (user != null && user.isNotEmpty) {
       if (choosenPokeNum == '1') {
         //Pokemon poke = Pokemon(spsnum: 1);
-        prefs.setString(SharedPreferencesKeys.playerPoke, Pokemon(spsnum: 1, owner: user).toJson());
+        prefs.setString(SharedPreferencesKeys.currentUserPoke, Pokemon(spsnum: 1, owner: user).toJson());
       } else if (choosenPokeNum == '2') {    
       } else if (choosenPokeNum == '3') {  
       } else if (choosenPokeNum == '') {
@@ -57,10 +57,10 @@ class StartersController extends ChangeNotifier {
 
   Future<String?> getUserName() async {
     final prefs = await SharedPreferences.getInstance();
-    final user = prefs.getString(SharedPreferencesKeys.user);
-    final userModel = UserModel.fromJson(jsonDecode(user!));
-    final userName = userModel.name;
-    log(userName);
-    return userName;
+    final currentUser = prefs.getString(SharedPreferencesKeys.currentUser);
+    final currentUserModel = UserModel.fromJson(jsonDecode(currentUser!));
+    final currentUserName = currentUserModel.name;
+    log(currentUserName);
+    return currentUserName;
   }
 }
