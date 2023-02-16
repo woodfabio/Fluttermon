@@ -14,6 +14,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   List<UserModel> myUsers = <UserModel>[];
 
   Future<void> getUsers() async {
+    log(myUsers.length.toString());
     final prefs = await SharedPreferences.getInstance();
     final users = prefs.getString(SharedPreferencesKeys.users);
 
@@ -21,16 +22,22 @@ class SignUpCubit extends Cubit<SignUpState> {
       final decoded = jsonDecode(users);
       final decodedUsers = (decoded as List).map((e) => UserModel.fromJson(e)).toList();
       myUsers = decodedUsers;
+      log(myUsers.length.toString());
     }
   }
 
   Future<void> addUser({required UserModel user}) async {
     emit(SignUpStateLoading());
-
+    
     final prefs = await SharedPreferences.getInstance();    
     myUsers.add(user);
+    log(myUsers.length.toString());
     final myUsersJson = myUsers.map((e) => e.toJson()).toList();
     prefs.setString(SharedPreferencesKeys.users, jsonEncode(myUsersJson));
+    
+    log(user.name.toString());
+    final newUserJson = user.toJson();
+    prefs.setString(SharedPreferencesKeys.currentUser,  jsonEncode(newUserJson));
 
     emit(SignUpStateSuccess());
   }
