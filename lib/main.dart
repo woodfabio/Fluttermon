@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttermon/src/modules/choose_user/choose_user_screen.dart';
 import 'package:fluttermon/src/modules/sign_up/sign_up_screen.dart';
 import 'package:fluttermon/src/shared/utils/consts.dart';
 import 'package:fluttermon/src/shared/utils/consts_routes.dart';
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget {
       initialRoute: ConstsRoutes.rootRoute,
       routes: {
         ConstsRoutes.rootRoute: (context) => const SplashScreen(),
+        ConstsRoutes.chooseUserRoute: (context) => const ChooseUserScreen(),
         ConstsRoutes.signUpRoute: (context) => const SignUpScreen(),
         ConstsRoutes.startersRoute: (context) => const StartersScreen(),
-        // '/map': (context) => MapScreen(),
+        // ConstsRoutes.roadMapRoute: (context) => const RoadMapScreen(),
       },
     );
   }
