@@ -32,6 +32,7 @@ class _StartersScreenState extends State<StartersScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +42,10 @@ class _StartersScreenState extends State<StartersScreen> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 log('snapshot with data');
-                return Text(Consts.startersScreenText1 + snapshot.data! + Consts.startersScreenText2);
+                return Text(
+                  Consts.startersScreenText1 + snapshot.data! + Consts.startersScreenText2,
+                  style: theme.textTheme.labelLarge,  
+                );
               } else {
                 log('snapshot without data');
                 return Container();
