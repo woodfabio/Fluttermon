@@ -39,7 +39,7 @@ class _PasswordCustomTextFormFieldState
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      prefixIcon: const Icon(Icons.vpn_key),
+      prefixIcon: const Icon(Icons.vpn_key, color: Colors.grey,),
       obscureText: obscureText,
       label: widget.label!,
       controller: widget.password,
