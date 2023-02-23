@@ -61,7 +61,36 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         hintText: hintText,
         label: label,
-        border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.black,
+          ),
+        ),
+        disabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.grey,
+          ),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.green,
+          ),
+        ),
+        focusedErrorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
+        errorBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
       ),
     );
   }
