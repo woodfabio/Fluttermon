@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class Consts {
   Consts._();
 
+  // shared texts
+  static const String backText = 'Back';
+
   // splash texts
   static const String fluttermonName = 'Fluttermon';
 
@@ -16,6 +19,7 @@ class Consts {
   static const String signUpTextSalutation = textSalutation;
   static const String textInteraction = 'Please enter your name:';
   static const String textUsername = 'Name';
+  static const String textPassword = 'Password';
   static const String signUpButton = 'Sign Up';
 
   // starters screen texts ---------------------------------------------------------------------------------------
