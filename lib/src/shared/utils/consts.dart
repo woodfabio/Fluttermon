@@ -13,6 +13,7 @@ class Consts {
   static const String textSalutation = 'Hello! Welcome to Fluttermon!';  
   static const String chooseUserText = 'Please, choose or create a user to start the game:';
   static const String createUserText = 'Create user';
+  static const String passwordDialogText = 'Please, enter password';
 
   // signUp texts ------------------------------------------------------------------------------------------------
   static const String imageLoginPage = 'images/login_flow/oak.png';

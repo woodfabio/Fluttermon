@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttermon/src/modules/choose_user/choose_user_cubit.dart';
 import 'package:fluttermon/src/modules/choose_user/choose_user_state.dart';
+import 'package:fluttermon/src/modules/choose_user/widgets/password_dialog.dart';
 import 'package:fluttermon/src/shared/models/user_model.dart';
 import 'package:fluttermon/src/shared/utils/consts.dart';
 import 'package:fluttermon/src/shared/utils/consts_routes.dart';
@@ -85,16 +86,23 @@ class _ChooseUserScreenState extends State<ChooseUserScreen> {
                                   IconButton(
                                     iconSize: 120,
                                     onPressed: () async {
-                                      await chooseUserCubit.setUser(user: state.users[i]);
-                                      final hasPoke = await chooseUserCubit.hasPokemon(
-                                        user: state.users[i]
-                                      );
-                                      if (!mounted) return;
-                                      if (hasPoke) {
-                                        Navigator.popAndPushNamed(context, ConstsRoutes.roadMapRoute);
-                                      } else {
-                                        Navigator.popAndPushNamed(context, ConstsRoutes.startersRoute);
-                                      }                                    
+                                      showDialog(
+                                        context: context, 
+                                        builder: (context) => PasswordDialog(user: state.users[i])
+                                      ).then((value) async {
+                                        if (value) {
+                                          await chooseUserCubit.setUser(user: state.users[i]);
+                                          final hasPoke = await chooseUserCubit.hasPokemon(
+                                            user: state.users[i]
+                                          );
+                                          if (!mounted) return;
+                                          if (hasPoke) {
+                                            Navigator.popAndPushNamed(context, ConstsRoutes.roadMapRoute);
+                                          } else {
+                                            Navigator.popAndPushNamed(context, ConstsRoutes.startersRoute);
+                                          }
+                                        }
+                                      });                                   
                                     },
                                     icon: Ink(
                                       height: 90,
